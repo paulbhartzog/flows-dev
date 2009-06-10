@@ -1,7 +1,7 @@
 <?php
 /*
  * ===========================================================================
- * Class:         [Enter the canonical name of this Flows component.]
+ * Class:         [Enter the sdfcanonical name of this Flows component.]
  * Date Created:  [Enter the date created: "00/00/0000"]
  * Author:        [Enter the name of the author.]
  * Description:   [Enter a description of the contents of the file.]
