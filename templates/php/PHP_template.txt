@@ -66,31 +66,34 @@ if($_GET) {
 /*
 	The XML returned from a sip should look something like this:
 	
-	<xml>
+	<response>
 	<canonical_name>URL goes here</canonical_name>
-	<display_name>String name of your component goes here.</display_name>
 	<version>Unix timestamp goes here.</version>
-	−
 	<request_types>
 		<request_type>REST</request_type>
 	</request_types>
-	−
 	<response_types>
 		<response_type>XML</response_type>
 		<response_type>HTML</response_type>
 	</response_types>
-	−
-	<usage>
-	
-		This Flows component accepts these requests, returns these responses, and does these things.
-		
-	</usage>
-	</xml>
+	</response>
 	
 	Be sure to only list request_types that your component will accept
 	(at this time all Flows components are REST-based).
 	Also be sure to only list response_types that your component can return.
 	(at this time XML and HTML are standard for Flows components).
+	
+	other things that could be returned
+	<display_name>String name of your component goes here.</display_name>
+	<authors>
+		<author>blah</author>
+	</authors>
+	<usage>
+	
+		This Flows component accepts these requests, returns these responses, and does these things.
+		
+	</usage>
+	
 */
 
 ?>

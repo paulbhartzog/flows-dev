@@ -1,9 +1,6 @@
-# first line is always path to python
-# #! /usr/bin/env python
-# #! /usr/bin/python
+# first line is always path to ruby
+# #!/usr/bin/env ruby
 # etc
-
-
 
 # ===========================================================================
 #
@@ -14,13 +11,8 @@
 
 # see if there is any additional information coming in on the HTTP GET request
 
-import cgi
-field = cgi.FieldStorage()
+	# add your code here
 
-# field.keys() contains incoming GET key/value data
-# for example:
-# for x in field.keys():
-#	print "\t" + x + " : " + field[ x ].value
 
 
 # if there IS incoming GET information then
@@ -57,7 +49,6 @@ field = cgi.FieldStorage()
 # For the required Flows XML see below.
 
 	# add your code here
-	# print "Content-Type: text/plain\n\n"
 
 
 
