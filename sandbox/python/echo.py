@@ -1,13 +1,8 @@
 #! /usr/bin/env python
 import cgi
-import cgitb
 import urlparse
 import urllib
 import os
-
-# output errors while coding
-import cgitb
-cgitb.enable()
 
 # for self info
 me = urlparse.urlunparse(("http", os.environ["HTTP_HOST"], os.environ["SCRIPT_NAME"], "", "", ""))
@@ -20,12 +15,23 @@ def sip_xml_response():
 	<canonical_name>''' + me + '''</canonical_name>
 	<version>''' + version + '''</version>
 	<request_types>
-		<request_type>REST</request_type>
+		<request_type>HTTP GET</request_type>
 	</request_types>
+	<parameters>
+		<param>response_type</param>
+	</parameters>
 	<response_types>
 		<response_type>XML</response_type>
 		<response_type>HTML</response_type>
 	</response_types>
+	<usage>
+		<default_response>sip</default_response>
+		<default_response_type>XML</default_response_type>
+		<description>
+		This Flows component will echo back any text sent to it on the HTTP GET querystring, 
+		using the response_type specified by the requestor.
+		</description>
+	</usage>
 	</response>
 	'''
 
