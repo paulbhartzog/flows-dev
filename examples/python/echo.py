@@ -29,7 +29,8 @@ def sip_xml_response():
 		<default_response_type>XML</default_response_type>
 		<description>
 		This Flows component will echo back any text sent to it on the HTTP GET querystring, 
-		using the response_type specified by the requestor.
+		using the response_type specified by the requestor.  This component is intended to 
+		be an "as simple as possible" demonstration of the Flows concept.
 		</description>
 	</usage>
 	</response>

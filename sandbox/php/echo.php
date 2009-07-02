@@ -1,4 +1,5 @@
 <?php
+
 /*
  * ===========================================================================
  * Class:         [Enter the canonical name of this Flows component.]
@@ -27,7 +28,7 @@ if($_GET) {
 		header ("content-type: text/xml");
 		$xml_output  = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n";
 		$xml_output .= "<xml>\n"; 
-		$xml_output .= "\t<canonical_name>http://flows.panarchy.com/sandbox/echo.php</canonical_name>\n";
+		$xml_output .= "\t<canonical_name>http://flows.panarchy.com/sandbox/echoss.php</canonical_name>\n";
 		$xml_output .= "\t<display_name>Echo</display_name>\n";
 		$xml_output .= "\t<version>2009/06/02</version>\n";
 		$xml_output .= "\t<request_types>\n";
@@ -43,8 +44,8 @@ if($_GET) {
 	$xml_output  .=  "</xml>\n";
 	echo $xml_output; 
 	} else {
-		if (array_key_exists("return_type", $incoming_array)){
-			switch ($incoming_array["return_type"]) {
+		if (array_key_exists("response_type", $incoming_array)){
+			switch ($incoming_array["response_type"]) {
 				case "xml":
 					header ("content-type: text/xml");
 					$xml_output  = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n";
