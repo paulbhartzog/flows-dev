@@ -1,0 +1,104 @@
+# first line is always path to ruby
+#!/usr/bin/env ruby
+
+# ===========================================================================
+#
+# NOTE:  I'm not saying that this is GOOD code,
+#        only that it DOES behave as a Flows object should
+#
+# ===========================================================================
+
+# see if there is any additional information coming in on the HTTP GET request
+
+require "cgi"
+cgi_request = CGI::new("html4")
+params = cgi_request.params
+
+
+# if there IS incoming GET information then
+# process it as follows
+
+# if the incoming GET information is a sip
+# return the sip response.
+# The standard Flows format for the default sip response is XML
+
+	# add your code here
+
+
+
+# if the incoming GET information is NOT a sip then
+
+	# add your code here
+
+
+
+# check for response_type information
+
+	# add your code here
+
+
+
+# return whatever is appropos after your code does whatever your code does
+
+	# add your code here
+
+
+
+# if there is NOT any additional information coming in on the HTTP GET request
+# return the same response as you would if the HTTP GET request was a sip.
+# For the required Flows XML see below.
+
+	# add your code here
+
+puts "Content-Type: text/html; charset=UTF-8"
+puts
+
+# for now simply printing incoming vars
+
+puts "Incoming params: "
+puts params.length
+puts "<br /><br />"
+
+params.each do |key, value|
+	puts key
+	puts ' = '
+	puts value
+	puts "<br />\n"
+end
+
+
+
+
+
+/*
+	The XML returned from a sip should look something like this:
+	
+	<response>
+	<canonical_name>URL goes here</canonical_name>
+	<version>Unix timestamp goes here.</version>
+	<request_types>
+		<request_type>REST</request_type>
+	</request_types>
+	<response_types>
+		<response_type>XML</response_type>
+		<response_type>HTML</response_type>
+	</response_types>
+	</response>
+	
+	Be sure to only list request_types that your component will accept
+	(at this time all Flows components are REST-based).
+	Also be sure to only list response_types that your component can return.
+	(at this time XML and HTML are standard for Flows components).
+	
+	other things that could be returned
+	<display_name>String name of your component goes here.</display_name>
+	<authors>
+		<author>blah</author>
+	</authors>
+	<usage>
+	
+		This Flows component accepts these requests, returns these responses, and does these things.
+		
+	</usage>
+	
+*/
