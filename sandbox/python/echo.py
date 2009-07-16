@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+
 import cgi
 import urlparse
 import urllib
@@ -12,6 +13,7 @@ def main():
 	
 	# sip response in XML
 	def sip_xml_response():
+
 		return '''
 		<response flows_version=".1">
 		<canonical_name>''' + me + '''</canonical_name>
