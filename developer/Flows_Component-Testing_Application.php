@@ -106,13 +106,13 @@ h2 {
 		<fieldset>
 			<legend>Flows Component: </legend>
 			<fieldset>
-				<legend>URL of Flows Component: </legend>
+				<legend>URL of Flows Component: (type in "http://" at the beginning)</legend>
 				<form method="get" action="">
 					<input type="text" id="url" name="url" size="100" onblur="urlUpdate();" />
 				</form>
 			</fieldset>
 			<fieldset>
-				<legend>QueryString (Parameters): </legend>
+				<legend>QueryString (type in the "?" at the beginning): </legend>
 				<form method="get" action="">
 					<input type="text" id="querystring" name="querystring" size="100" onblur="urlUpdate();" /> 
 				</form>
