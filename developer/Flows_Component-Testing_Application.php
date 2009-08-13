@@ -70,9 +70,11 @@ function ajaxRequest(url,method) {
 }
 
 function ajaxProcess(method){
+	var helperurl = document.getElementById('helper').value;
 	var url = document.getElementById('url').value;
 	var querystring = document.getElementById('querystring').value;
-	var fullurl = url + querystring;
+	// var fullurl = url + querystring;
+	var fullurl = helperurl + "?url=" + url;
 	ajaxRequest(fullurl, method);
 }
 
@@ -80,9 +82,11 @@ function ajaxProcess(method){
 // update internal application fields
 // --------------------------------------------------------------------------
 function urlUpdate(){
+	var helperurl = document.getElementById('helper').value;
 	var url = document.getElementById('url').value;
 	var querystring = document.getElementById('querystring').value;
 	var fullurl = url + querystring;
+	var fullurl = helperurl + "?url=" + url;
 	var href = '<a href="' + fullurl + '">' + fullurl + '</a>';
 	document.getElementById('combinedURL').innerHTML = href;
 }
@@ -106,17 +110,26 @@ h2 {
 		<fieldset>
 			<legend>Flows Component: </legend>
 			<fieldset>
-				<legend>URL of Flows Component: (type in "http://" at the beginning)</legend>
+				<legend>URL of Helper Script: (because XMLHTTPRequest can only call local objects)</legend>
 				<form method="get" action="">
-					<input type="text" id="url" name="url" size="100" onblur="urlUpdate();" />
+					<input type="text" id="helper" name="helper" size="100"/>
 				</form>
 			</fieldset>
+			<br />
 			<fieldset>
-				<legend>QueryString (type in the "?" at the beginning): </legend>
+				<legend>URL of Flows Component: (with "http://" at the beginning)</legend>
+				<form method="get" action="">
+					<input type="text" id="url" name="url" size="100" value="http://" onblur="urlUpdate();" />
+				</form>
+			</fieldset>
+			<br />
+			<fieldset>
+				<legend>QueryString (with "?" at the beginning): </legend>
 				<form method="get" action="">
 					<input type="text" id="querystring" name="querystring" size="100" onblur="urlUpdate();" /> 
 				</form>
 			</fieldset>
+			<br />
 			<fieldset>
 				<legend>Combined Flows URL:</legend>
 				<div id="combinedURL">&nbsp;</div>
