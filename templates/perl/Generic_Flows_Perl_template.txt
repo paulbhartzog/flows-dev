@@ -1,4 +1,4 @@
-# first line is always path to ruby
+# first line is always path to perl
 # #!/usr/bin/env perl
 # etc
 
