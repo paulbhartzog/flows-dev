@@ -1,5 +1,5 @@
 # first line is always path to perl
-# #!/usr/bin/env perl
+# #!/usr/bin/perl
 # etc
 
 # ===========================================================================
